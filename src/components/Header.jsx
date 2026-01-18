@@ -1,10 +1,7 @@
-import React from 'react'
-import { Search, ShoppingCart, User, Menu } from 'lucide-react'
-import { Link, useLocation } from 'react-router-dom'
-
+import React, { useState } from 'react'
 import { Search, ShoppingCart, User, Menu, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+
 
 const Header = () => {
     const location = useLocation()
