@@ -35,10 +35,10 @@ const Home = () => {
     }, [])
 
     return (
-        <div style={{ padding: '40px 80px', background: '#f8fdfb' }}>
+        <div className="container-padding" style={{ background: '#f8fdfb' }}>
 
             {/* Top Section: Hero + Summer Sale */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '30px', marginBottom: '60px' }}>
+            <div className="grid-hero">
 
                 {/* Hero Banner */}
                 <div style={{
@@ -54,10 +54,10 @@ const Home = () => {
                     height: '450px',
                     boxShadow: '0 20px 40px rgba(26, 135, 99, 0.2)'
                 }}>
-                    <div style={{ zIndex: 1, maxWidth: '50%' }}>
+                    <div style={{ zIndex: 1, maxWidth: '100%' }}>
                         <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#A9DFC2' }}>New Arrivals 2026</p>
-                        <h1 style={{ fontSize: '4rem', fontWeight: 800, margin: '15px 0', lineHeight: 1.1 }}>Step Into The Future.</h1>
-                        <p style={{ fontSize: '1.1rem', opacity: 0.9, marginBottom: '30px' }}>Experience ultimate comfort and revolutionary design with the new KICK collection.</p>
+                        <h1 className="text-hero">Step Into The Future.</h1>
+                        <p style={{ fontSize: '1.1rem', opacity: 0.9, marginBottom: '30px', maxWidth: '400px' }}>Experience ultimate comfort and revolutionary design with the new KICK collection.</p>
                         <button style={{ background: 'white', color: '#1A8763', padding: '16px 36px', borderRadius: '12px', fontWeight: 700, fontSize: '1.1rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}>
                             Shop Now
                         </button>
@@ -118,7 +118,7 @@ const Home = () => {
                     </button>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '30px' }}>
+                <div className="grid-products">
                     {loading ? (
                         <div style={{ gridColumn: 'span 4', textAlign: 'center', padding: '100px', color: '#1A8763', fontWeight: 700 }}>Loading Kicks...</div>
                     ) : products.map((product) => (
@@ -148,11 +148,11 @@ const Home = () => {
             </div>
 
             {/* Explore Categories */}
-            <div style={{ background: '#1A8763', borderRadius: '32px', padding: '60px', color: 'white', display: 'flex', gap: '80px', alignItems: 'center' }}>
+            <div style={{ background: '#1A8763', borderRadius: '32px', padding: '60px 40px', color: 'white', display: 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center', textAlign: 'center' }}>
                 <div style={{ flex: 1 }}>
                     <h3 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Explore Categories</h3>
                     <p style={{ fontSize: '1.1rem', opacity: 0.8, marginBottom: '40px' }}>Find the perfect pair for every occasion, from high-performance track shoes to casual everyday wear.</p>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '20px', width: '100%' }}>
                         {['Running', 'Casual', 'Limited Edition', 'Sports'].map((cat) => (
                             <div key={cat} style={{ background: 'rgba(255,255,255,0.1)', padding: '20px', borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <span style={{ fontWeight: 600 }}>{cat}</span>
@@ -160,9 +160,6 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
-                </div>
-                <div style={{ flex: 1, position: 'relative' }}>
-                    <img src={sportsShoe} style={{ width: '100%', transform: 'rotate(-15deg) scale(1.1)', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.3))' }} />
                 </div>
             </div>
         </div>

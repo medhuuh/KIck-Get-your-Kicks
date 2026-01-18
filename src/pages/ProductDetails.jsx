@@ -48,7 +48,7 @@ const ProductDetails = () => {
                 <ArrowLeft size={20} /> Back to Shop
             </button>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+            <div className="grid-details">
 
                 {/* Product Image Section */}
                 <div style={{ position: 'relative' }}>

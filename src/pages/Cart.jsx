@@ -26,7 +26,7 @@ const Cart = () => {
     }
 
     return (
-        <div style={{ padding: '60px 80px', background: 'linear-gradient(135deg, #f8fdfb 0%, #e0f2f1 100%)', minHeight: '90vh' }}>
+        <div className="container-padding" style={{ background: 'linear-gradient(135deg, #f8fdfb 0%, #e0f2f1 100%)', minHeight: '90vh' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
                 <h1 style={{ fontSize: '3.5rem', color: '#1A8763', fontWeight: 800 }}>Your Cart</h1>
                 <Link to="/home" style={{ color: '#1A8763', textDecoration: 'none', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -34,13 +34,13 @@ const Cart = () => {
                 </Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '60px' }}>
+            <div className="grid-cart">
 
                 {/* Cart Items Table */}
                 <div>
                     <div style={{ background: 'white', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(26, 135, 99, 0.05)' }}>
                         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                            <thead>
+                            <thead className="cart-table-header">
                                 <tr style={{ background: '#f1f9f6', color: '#1A8763' }}>
                                     <th style={thStyle}>Product</th>
                                     <th style={thStyle}>Price</th>
@@ -50,10 +50,10 @@ const Cart = () => {
                             </thead>
                             <tbody>
                                 {items.map(item => (
-                                    <tr key={item.id} style={{ borderBottom: '1px solid #f0f7f4' }}>
+                                    <tr key={item.id} className="cart-item-row" style={{ borderBottom: '1px solid #f0f7f4' }}>
                                         <td style={tdStyle}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                                                <div style={{
+                                                <div className="cart-item-image" style={{
                                                     background: 'linear-gradient(135deg, #e0f2f1 0%, #A9DFC2 100%)',
                                                     borderRadius: '16px',
                                                     padding: '10px',
