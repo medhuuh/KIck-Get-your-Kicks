@@ -7,6 +7,8 @@ import casualShoe from '../assets/casual-shoe.png'
 import sportsShoe from '../assets/sports-shoe.png'
 import oliveShoe from '../assets/olive-shoe.png'
 
+import { API_BASE_URL } from '../api'
+
 const Home = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -20,7 +22,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch(`${API_BASE_URL}/api/products`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
