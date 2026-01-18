@@ -1,0 +1,141 @@
+:root {
+  /* Color Palette - Based on the "KICK" design */
+  --bg-gradient-1: #b2eec3;
+  --bg-gradient-2: #80cca3;
+  --bg-gradient-3: #4da983;
+  --bg-gradient-4: #1a8763;
+  --bg-gradient-5: #006543;
+
+  --accent-light: #2ecc71;
+  --accent-dark: #1e8449;
+
+  --text-main: #004d32;
+  --text-white: #ffffff;
+  --text-muted: #e8f8f0;
+
+  --glass: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  --primary-font: 'Outfit', sans-serif;
+  --secondary-font: 'Inter', sans-serif;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  background: var(--bg-gradient-1);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 50px rgba(0, 77, 50, 0.15);
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 15px var(--accent-light));
+}
+
+.btn-primary {
+  background: var(--accent-light);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ghost {
+  border: 1px solid var(--accent-light);
+  color: var(--accent-light);
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+/* Auth Background Layout (Striped) */
+.auth-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-bg .stripe {
+  flex: 1;
+  width: 100%;
+  transform: skewY(-5deg) scaleX(1.1);
+}
+
+.stripe:nth-child(1) {
+  background: var(--bg-gradient-1);
+}
+
+.stripe:nth-child(2) {
+  background: var(--bg-gradient-2);
+}
+
+.stripe:nth-child(3) {
+  background: var(--bg-gradient-3);
+}
+
+.stripe:nth-child(4) {
+  background: var(--bg-gradient-4);
+}
+
+.stripe:nth-child(5) {
+  background: var(--bg-gradient-5);
+}
