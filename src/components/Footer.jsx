@@ -8,8 +8,8 @@ const Footer = () => {
     if (location.pathname === '/' || location.pathname === '/register') return null
 
     return (
-        <footer style={{ background: '#004D32', color: 'white', padding: '60px 80px 40px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', marginBottom: '60px' }}>
+        <footer className="container-padding" style={{ background: '#004D32', color: 'white' }}>
+            <div className="footer-columns" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '40px', marginBottom: '40px' }}>
                 <div>
                     <h4 style={footerTitleStyle}>Help</h4>
                     <ul style={footerListStyle}>
@@ -48,28 +48,29 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: '30px', fontSize: '0.9rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '30px' }}>
+                <div style={{ display: 'flex', gap: '20px', fontSize: '0.85rem', flexWrap: 'wrap' }}>
                     <span>Home</span>
                     <span>Shop</span>
                     <span>Orders</span>
                     <span>Contact Us</span>
                     <span>About Us</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                    <span style={{ fontSize: '0.9rem' }}>Sign up for Newsletter</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '0.85rem' }}>Newsletter</span>
                     <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                         <input
                             type="email"
-                            placeholder="Enter your email"
+                            placeholder="Email"
                             style={{
-                                padding: '12px 100px 12px 15px',
+                                padding: '10px 80px 10px 15px',
                                 borderRadius: '8px',
                                 border: 'none',
-                                background: '#c7ede0'
+                                background: '#c7ede0',
+                                width: '200px'
                             }}
                         />
-                        <button style={{ position: 'absolute', right: '5px', background: '#27ae60', color: 'white', padding: '8px 20px', borderRadius: '6px', fontWeight: 600 }}>Sign up</button>
+                        <button style={{ position: 'absolute', right: '4px', background: '#27ae60', color: 'white', padding: '6px 15px', borderRadius: '6px', fontWeight: 600, fontSize: '0.8rem' }}>Join</button>
                     </div>
                 </div>
             </div>

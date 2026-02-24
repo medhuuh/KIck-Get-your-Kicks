@@ -18,7 +18,7 @@ const Header = () => {
                         <Menu size={24} />
                     </button>
                     <Link to="/home" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-                        <h1 style={{ color: '#2C5F4D', fontSize: '1.8rem', fontWeight: 900, fontFamily: 'monospace', letterSpacing: '-1px' }}>
+                        <h1 className="header-logo" style={{ color: '#2C5F4D', fontSize: '1.8rem', fontWeight: 900, fontFamily: 'monospace', letterSpacing: '-1px' }}>
                             KICK<span style={{ fontSize: '0.6rem', verticalAlign: 'top', color: '#2ECC71', marginLeft: '2px' }}>BETA</span>
                         </h1>
                     </Link>
@@ -37,6 +37,7 @@ const Header = () => {
                         <input
                             type="text"
                             placeholder="Search"
+                            className="header-search-input"
                             style={{
                                 padding: '10px 40px 10px 15px',
                                 borderRadius: '20px',
@@ -47,8 +48,9 @@ const Header = () => {
                         />
                         <Search size={18} style={{ position: 'absolute', right: '15px', color: '#1A8763' }} />
                     </div>
-                    <Link to="/cart" style={{ color: '#1A8763' }}><ShoppingCart size={24} /></Link>
-                    <Link to="/profile" style={{ color: '#1A8763' }}><User size={24} /></Link>
+                    <Link to="/cart" style={{ color: '#1A8763', display: 'flex', alignItems: 'center' }}><ShoppingCart size={24} /></Link>
+                    <Link to="/profile" className="desktop-nav" style={{ color: '#1A8763', display: 'flex', alignItems: 'center' }}><User size={24} /></Link>
+                    <Link to="/profile" className="mobile-menu-btn" style={{ color: '#1A8763', display: 'flex', alignItems: 'center' }}><User size={24} /></Link>
                 </div>
             </header>
 

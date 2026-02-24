@@ -6,53 +6,53 @@ import userAvatar from '../assets/user-avatar.png'
 const Profile = () => {
     const navigate = useNavigate()
     return (
-        <div style={{ padding: '60px 80px', background: 'linear-gradient(135deg, #f8fdfb 0%, #e0f2f1 100%)', minHeight: '80vh' }}>
-            <h1 style={{ fontSize: '3rem', color: '#1A8763', marginBottom: '40px', fontWeight: 800 }}>My Profile</h1>
+        <div className="container-padding" style={{ background: 'linear-gradient(135deg, #f8fdfb 0%, #e0f2f1 100%)', minHeight: '80vh' }}>
+            <h1 className="text-title" style={{ color: '#1A8763', marginBottom: '30px' }}>My Profile</h1>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '40px' }}>
+            <div className="profile-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 300px) 1fr', gap: '30px' }}>
 
                 {/* Sidebar */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <button style={{ ...sidebarBtnStyle, ...activeSidebarBtnStyle }}>
-                        <User size={20} /> Account Details
+                        <User size={18} /> Account Details
                     </button>
                     <button style={sidebarBtnStyle}>
-                        <Package size={20} /> My Orders
+                        <Package size={18} /> My Orders
                     </button>
                     <button style={sidebarBtnStyle}>
-                        <MapPin size={20} /> Addresses
+                        <MapPin size={18} /> Addresses
                     </button>
                     <button style={sidebarBtnStyle}>
-                        <Heart size={20} /> Wishlist
+                        <Heart size={18} /> Wishlist
                     </button>
                     <button
                         onClick={() => navigate('/login')}
                         style={{ ...sidebarBtnStyle, marginTop: '20px', color: '#d35400', background: 'rgba(211, 84, 0, 0.05)', cursor: 'pointer' }}
                     >
-                        <LogOut size={20} /> Logout
+                        <LogOut size={18} /> Logout
                     </button>
                 </div>
 
                 {/* Main Form Area */}
-                <div className="glass-card shadow-premium" style={{ padding: '60px', display: 'flex', gap: '60px', alignItems: 'flex-start', background: 'white', border: 'none' }}>
-                    <div style={{ textAlign: 'center' }}>
+                <div className="glass-card shadow-premium" style={{ padding: '30px', display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start', background: 'white', border: 'none' }}>
+                    <div style={{ textAlign: 'center', margin: '0 auto' }}>
                         <div style={{
-                            width: '180px',
-                            height: '180px',
+                            width: '150px',
+                            height: '150px',
                             background: '#2C5F4D',
-                            borderRadius: '30px',
+                            borderRadius: '24px',
                             flexShrink: 0,
                             overflow: 'hidden',
-                            boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
-                            marginBottom: '20px'
+                            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                            marginBottom: '15px'
                         }}>
                             <img src={userAvatar} alt="User Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
-                        <button style={{ color: '#1A8763', fontWeight: 700, fontSize: '0.9rem' }}>Change Photo</button>
+                        <button style={{ color: '#1A8763', fontWeight: 700, fontSize: '0.85rem' }}>Change Photo</button>
                     </div>
 
-                    <div style={{ flex: 1 }}>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px 40px' }}>
+                    <div style={{ flex: '1 1 300px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px 30px' }}>
                             <div>
                                 <label style={labelStyle}>Full Name</label>
                                 <input type="text" defaultValue="John Doe" style={profileInputStyle} />
@@ -74,9 +74,9 @@ const Profile = () => {
                             </div>
                         </div>
 
-                        <div style={{ display: 'flex', gap: '20px', marginTop: '60px' }}>
-                            <button style={{ flex: 1, border: '2px solid #A9DFC2', color: '#1A8763', padding: '16px', borderRadius: '15px', fontWeight: 700 }}>Cancel</button>
-                            <button style={{ flex: 1, background: '#1A8763', color: 'white', padding: '16px', borderRadius: '15px', fontWeight: 700, boxShadow: '0 10px 20px rgba(26, 135, 99, 0.2)' }}>Save Changes</button>
+                        <div style={{ display: 'flex', gap: '15px', marginTop: '40px', flexWrap: 'wrap' }}>
+                            <button style={{ flex: 1, border: '2px solid #A9DFC2', color: '#1A8763', padding: '14px', borderRadius: '12px', fontWeight: 700, minWidth: '120px' }}>Cancel</button>
+                            <button style={{ flex: 1, background: '#1A8763', color: 'white', padding: '14px', borderRadius: '12px', fontWeight: 700, boxShadow: '0 8px 16px rgba(26, 135, 99, 0.2)', minWidth: '120px' }}>Save Changes</button>
                         </div>
                     </div>
                 </div>

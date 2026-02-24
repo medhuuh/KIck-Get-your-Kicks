@@ -19,34 +19,60 @@ const Register = () => {
     }
 
     return (
-        <div style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
             <AuthBackground />
-            <div style={{ position: 'absolute', top: '40px', left: '60px', zIndex: 10 }}>
-                <h1 style={{ color: '#2C5F4D', fontSize: '4.5rem', fontWeight: 900, fontFamily: '"Press Start 2P", monospace', letterSpacing: '-5px', lineHeight: 1 }}>
-                    KICK<span style={{ fontSize: '1rem', verticalAlign: 'top', color: '#2ECC71', marginLeft: '8px', fontFamily: 'monospace' }}>BETA</span>
+
+            {/* Top Logo */}
+            <div className="auth-logo-container" style={{ position: 'absolute', top: '30px', left: '30px', zIndex: 10 }}>
+                <h1 className="auth-logo" style={{ color: '#2C5F4D', fontSize: '3rem', fontWeight: 900, fontFamily: 'monospace', letterSpacing: '-2px', lineHeight: 1 }}>
+                    KICK<span style={{ fontSize: '0.8rem', verticalAlign: 'top', color: '#2ECC71', marginLeft: '4px' }}>BETA</span>
                 </h1>
             </div>
-            <div style={{ position: 'absolute', top: '40px', right: '60px', display: 'flex', alignItems: 'center', gap: '30px', zIndex: 10 }}>
-                <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', opacity: 0.8 }}>SIGN IN</Link>
-                <button style={{ background: '#1A8763', color: 'white', padding: '12px 30px', borderRadius: '25px', fontWeight: 700, fontSize: '0.9rem' }}>REGISTER</button>
+
+            {/* Nav Actions */}
+            <div className="auth-nav-container" style={{ position: 'absolute', top: '30px', right: '30px', display: 'flex', alignItems: 'center', gap: '20px', zIndex: 10 }}>
+                <Link to="/" className="auth-nav-link" style={{ color: 'white', textDecoration: 'none', fontWeight: 700, fontSize: '0.85rem' }}>SIGN IN</Link>
             </div>
-            <div style={{ width: '100%', maxWidth: '1300px', display: 'flex', alignItems: 'center', gap: '80px', padding: '0 60px', marginTop: '60px' }}>
-                <div style={{ flex: 1.2, position: 'relative' }}>
-                    <motion.div animate={{ y: [0, -25, 0], rotate: [-25, -20, -25] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-                        <img src={oliveShoe} alt="Olive Shoe" style={{ width: '100%', filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.4))' }} />
+
+            <div className="auth-content-grid" style={{ width: '100%', maxWidth: '1100px', display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '40px' }}>
+
+                {/* Left Side: Floating Olive Shoe */}
+                <div className="auth-image-container" style={{ flex: '1 1 300px', maxWidth: '500px' }}>
+                    <motion.div
+                        animate={{
+                            y: [0, -20, 0],
+                            rotate: [-20, -15, -20]
+                        }}
+                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <img
+                            src={oliveShoe}
+                            alt="Olive Shoe"
+                            style={{ width: '100%', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))' }}
+                        />
                     </motion.div>
                 </div>
-                <div style={{ flex: 0.8, maxWidth: '450px' }}>
-                    <form onSubmit={handleRegister} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                        <input placeholder="Enter Your Name" value={name} onChange={(e) => setName(e.target.value)} style={authInputStyle} />
-                        <input placeholder="Enter Your Email Id" value={email} onChange={(e) => setEmail(e.target.value)} style={authInputStyle} />
+
+                {/* Right Side: Sign Up Form */}
+                <div style={{ flex: '1 1 350px', maxWidth: '450px' }}>
+                    <div style={{ marginBottom: '30px', position: 'relative' }}>
+                        <p style={{ color: 'white', fontWeight: 800, fontSize: '0.9rem', letterSpacing: '1px', marginBottom: '5px' }}>CREATE ACCOUNT</p>
                         <div style={{ position: 'relative' }}>
-                            <input type={showPassword ? "text" : "password"} placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} style={authInputStyle} />
+                            <h2 style={{ color: '#A9DFC2', fontSize: '2rem', fontWeight: 900, lineHeight: 1.1, letterSpacing: '1px' }}>
+                                JOIN THE CLUB.
+                            </h2>
+                        </div>
+                    </div>
+                    <form onSubmit={handleRegister} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <input placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} style={authInputStyle} />
+                        <input placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} style={authInputStyle} />
+                        <div style={{ position: 'relative' }}>
+                            <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={authInputStyle} />
                             <button type="button" onClick={() => setShowPassword(!showPassword)} style={eyeButtonStyle}>
-                                {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
+                                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                             </button>
                         </div>
-                        <button type="submit" style={{ padding: '18px', borderRadius: '12px', background: '#004D32', color: 'white', fontWeight: 800, fontSize: '1.2rem', marginTop: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', border: 'none', cursor: 'pointer' }}>REGISTER</button>
+                        <button type="submit" style={{ padding: '16px', borderRadius: '12px', background: '#004D32', color: 'white', fontWeight: 800, fontSize: '1.1rem', marginTop: '10px', boxShadow: '0 8px 16px rgba(0,0,0,0.2)', border: 'none', cursor: 'pointer' }}>REGISTER</button>
                     </form>
                 </div>
             </div>

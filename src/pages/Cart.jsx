@@ -27,10 +27,10 @@ const Cart = () => {
 
     return (
         <div className="container-padding" style={{ background: 'linear-gradient(135deg, #f8fdfb 0%, #e0f2f1 100%)', minHeight: '90vh' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
-                <h1 style={{ fontSize: '3.5rem', color: '#1A8763', fontWeight: 800 }}>Your Cart</h1>
-                <Link to="/home" style={{ color: '#1A8763', textDecoration: 'none', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <ArrowLeft size={20} /> Continue Shopping
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+                <h1 className="text-title" style={{ color: '#1A8763', margin: 0 }}>Your Cart</h1>
+                <Link to="/home" style={{ color: '#1A8763', textDecoration: 'none', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem' }}>
+                    <ArrowLeft size={18} /> Continue Shopping
                 </Link>
             </div>
 
@@ -101,8 +101,8 @@ const Cart = () => {
 
                 {/* Cart Totals */}
                 <div style={{ height: 'fit-content' }}>
-                    <div className="glass-card shadow-premium" style={{ padding: '40px', background: 'white', border: 'none' }}>
-                        <h3 style={{ fontSize: '1.8rem', marginBottom: '30px', fontWeight: 800, color: '#2C5F4D' }}>Order Summary</h3>
+                    <div className="glass-card shadow-premium" style={{ padding: '30px', background: 'white', border: 'none' }}>
+                        <h3 style={{ fontSize: '1.5rem', marginBottom: '20px', fontWeight: 800, color: '#2C5F4D' }}>Order Summary</h3>
 
                         <div style={summaryRowStyle}>
                             <span style={{ color: '#888' }}>Subtotal</span>
@@ -117,7 +117,7 @@ const Cart = () => {
                             <span style={{ fontWeight: 600 }}>${tax.toFixed(2)}</span>
                         </div>
 
-                        <div style={{ ...summaryRowStyle, borderTop: '2px dashed #f0f7f4', paddingTop: '25px', marginTop: '25px', fontSize: '1.8rem', fontWeight: 800, color: '#1A8763' }}>
+                        <div style={{ ...summaryRowStyle, borderTop: '2px dashed #f0f7f4', paddingTop: '20px', marginTop: '20px', fontSize: '1.5rem', fontWeight: 800, color: '#1A8763' }}>
                             <span>Total</span>
                             <span>${total.toFixed(2)}</span>
                         </div>
@@ -126,21 +126,21 @@ const Cart = () => {
                             width: '100%',
                             background: '#1A8763',
                             color: 'white',
-                            padding: '22px',
-                            borderRadius: '18px',
+                            padding: '18px',
+                            borderRadius: '14px',
                             fontWeight: 800,
-                            marginTop: '40px',
-                            fontSize: '1.2rem',
+                            marginTop: '30px',
+                            fontSize: '1.1rem',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            gap: '12px',
-                            boxShadow: '0 15px 30px rgba(26, 135, 99, 0.2)'
+                            gap: '10px',
+                            boxShadow: '0 10px 20px rgba(26, 135, 99, 0.2)'
                         }}>
-                            <CreditCard size={24} /> Checkout Now
+                            <CreditCard size={22} /> Checkout Now
                         </button>
 
-                        <p style={{ textAlign: 'center', marginTop: '20px', color: '#888', fontSize: '0.9rem' }}>
+                        <p style={{ textAlign: 'center', marginTop: '15px', color: '#888', fontSize: '0.8rem' }}>
                             Secure checkout powered by KICK Payments
                         </p>
                     </div>

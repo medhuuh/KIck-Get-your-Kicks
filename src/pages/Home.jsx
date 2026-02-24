@@ -41,24 +41,24 @@ const Home = () => {
             <div className="grid-hero">
 
                 {/* Hero Banner */}
-                <div style={{
+                <div className="hero-banner" style={{
                     background: 'linear-gradient(135deg, #A9DFC2 0%, #2C5F4D 100%)',
                     borderRadius: '32px',
-                    padding: '60px',
+                    padding: '40px',
                     position: 'relative',
                     overflow: 'hidden',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     color: 'white',
-                    height: '450px',
+                    minHeight: '400px',
                     boxShadow: '0 20px 40px rgba(26, 135, 99, 0.2)'
                 }}>
-                    <div style={{ zIndex: 1, maxWidth: '100%' }}>
-                        <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#A9DFC2' }}>New Arrivals 2026</p>
+                    <div style={{ zIndex: 2, maxWidth: '100%' }}>
+                        <p style={{ fontSize: '1rem', fontWeight: 600, color: '#A9DFC2' }}>New Arrivals 2026</p>
                         <h1 className="text-hero">Step Into The Future.</h1>
-                        <p style={{ fontSize: '1.1rem', opacity: 0.9, marginBottom: '30px', maxWidth: '400px' }}>Experience ultimate comfort and revolutionary design with the new KICK collection.</p>
-                        <button style={{ background: 'white', color: '#1A8763', padding: '16px 36px', borderRadius: '12px', fontWeight: 700, fontSize: '1.1rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}>
+                        <p style={{ fontSize: '1rem', opacity: 0.9, marginBottom: '20px', maxWidth: '350px' }}>Experience ultimate comfort and revolutionary design with the new KICK collection.</p>
+                        <button style={{ background: 'white', color: '#1A8763', padding: '14px 30px', borderRadius: '12px', fontWeight: 700, fontSize: '1rem', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}>
                             Shop Now
                         </button>
                     </div>
@@ -67,17 +67,19 @@ const Home = () => {
                     <motion.img
                         src={heroShoe}
                         alt="Hero Shoe"
+                        className="hero-image"
                         animate={{
-                            y: [0, -15, 0],
+                            y: [0, -10, 0],
                             rotate: [-15, -10, -15]
                         }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         style={{
                             position: 'absolute',
-                            right: '20px',
-                            top: '40px',
-                            width: '500px',
-                            filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.4))'
+                            right: '-50px',
+                            top: '20px',
+                            width: '400px',
+                            filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.4))',
+                            zIndex: 1
                         }}
                     />
                 </div>
@@ -86,31 +88,31 @@ const Home = () => {
                 <div style={{
                     background: 'linear-gradient(135deg, #2C5F4D 0%, #1A8763 100%)',
                     borderRadius: '32px',
-                    padding: '40px',
+                    padding: '30px',
                     textAlign: 'center',
                     color: 'white',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    height: '450px',
+                    minHeight: '400px',
                     position: 'relative',
                     overflow: 'hidden'
                 }}>
                     <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'rgba(255,255,255,0.05)', borderRadius: '50%' }}></div>
-                    <h2 style={{ fontSize: '3rem', fontWeight: 800 }}>50% OFF</h2>
-                    <p style={{ fontSize: '1.3rem', marginTop: '10px', opacity: 0.9 }}>Summer Sale Styles</p>
-                    <button style={{ border: '2px solid white', color: 'white', padding: '12px 30px', borderRadius: '12px', fontWeight: 700, marginTop: '30px', alignSelf: 'center' }}>
+                    <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>50% OFF</h2>
+                    <p style={{ fontSize: '1.1rem', marginTop: '10px', opacity: 0.9 }}>Summer Sale Styles</p>
+                    <button style={{ border: '2px solid white', color: 'white', padding: '10px 24px', borderRadius: '12px', fontWeight: 700, marginTop: '20px', alignSelf: 'center' }}>
                         View Sale
                     </button>
-                    <img src={sportsShoe} style={{ width: '250px', marginTop: '30px', alignSelf: 'center', transform: 'rotate(15deg)', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }} />
+                    <img src={sportsShoe} style={{ width: '200px', marginTop: '20px', alignSelf: 'center', transform: 'rotate(15deg)', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }} />
                 </div>
             </div>
 
             {/* Featured Products Section */}
-            <div style={{ marginBottom: '80px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px' }}>
+            <div style={{ marginBottom: '60px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
                     <div>
-                        <h3 style={{ fontSize: '2.5rem', color: '#1A8763' }}>Featured Kicks</h3>
+                        <h3 className="section-title" style={{ fontSize: '2rem', color: '#1A8763' }}>Featured Kicks</h3>
                         <p style={{ color: '#666', marginTop: '5px' }}>Top picks from our latest release</p>
                     </div>
                     <button style={{ color: '#1A8763', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -120,7 +122,7 @@ const Home = () => {
 
                 <div className="grid-products">
                     {loading ? (
-                        <div style={{ gridColumn: 'span 4', textAlign: 'center', padding: '100px', color: '#1A8763', fontWeight: 700 }}>Loading Kicks...</div>
+                        <div style={{ gridColumn: 'span 4', textAlign: 'center', padding: '60px', color: '#1A8763', fontWeight: 700 }}>Loading Kicks...</div>
                     ) : products.map((product) => (
                         <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }}>
                             <motion.div
@@ -128,19 +130,19 @@ const Home = () => {
                                 className="glass-card"
                                 style={{ padding: '20px', background: 'white', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
                             >
-                                <div style={{ background: '#f1f9f6', borderRadius: '20px', padding: '20px', position: 'relative', marginBottom: '20px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <img src={assetMap[product.image] || heroShoe} alt={product.name} style={{ width: '100%', transform: 'rotate(-10deg)', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
-                                    <button style={{ position: 'absolute', top: '15px', right: '15px', background: 'white', padding: '10px', borderRadius: '50%', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}>
-                                        <ShoppingBag size={20} color="#1A8763" />
+                                <div style={{ background: '#f1f9f6', borderRadius: '20px', padding: '20px', position: 'relative', marginBottom: '20px', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <img src={assetMap[product.image] || heroShoe} alt={product.name} style={{ maxWidth: '100%', maxHeight: '100%', transform: 'rotate(-10deg)', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
+                                    <button style={{ position: 'absolute', top: '10px', right: '10px', background: 'white', padding: '8px', borderRadius: '50%', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}>
+                                        <ShoppingBag size={18} color="#1A8763" />
                                     </button>
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                                     <span style={{ color: '#1A8763', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
                                         <Star size={14} fill="#1A8763" /> {product.rating}
                                     </span>
-                                    <span style={{ fontSize: '1.2rem', fontWeight: 800 }}>${product.price}</span>
+                                    <span style={{ fontSize: '1.1rem', fontWeight: 800 }}>${product.price}</span>
                                 </div>
-                                <h4 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{product.name}</h4>
+                                <h4 style={{ fontSize: '1rem', fontWeight: 600 }}>{product.name}</h4>
                             </motion.div>
                         </Link>
                     ))}
